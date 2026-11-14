@@ -89,7 +89,7 @@ static std::string commandCustomer(Store &store, std::istringstream &in)
     int id = 0;
     int discount = 0;
 
-    if (!readInt(in, id) || !readInt(in, discount))
+    if (!readInt(in, id) || !readInt(in, discount) || discount < 0 || discount > 100)
     {
         return "Error: use customer <id> <discount> <name>";
     }
